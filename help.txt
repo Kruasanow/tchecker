@@ -1,0 +1,23 @@
+RU1 — Россия Россия, Москва 
+( login.p1.worldoftanks.net ) 
+
+RU2 — Россия Россия, Москва 
+( login.p2.worldoftanks.net ) 
+
+RU4 — Россия Россия, Екатеринбург 
+( login.p4.worldoftanks.net ) 
+
+RU5 — Россия Россия, Москва 
+( login.p5.worldoftanks.net ) 
+
+RU6 — Россия Россия, Москва 
+( login.p6.worldoftanks.net ) 
+
+RU7 — Россия Россия, Санкт-Петербург 
+( login.p7.worldoftanks.net ) 
+
+RU8 — Россия Россия, Красноярск 
+( login.p8.worldoftanks.net ) 
+
+RU9 — Россия Россия, Хабаровск 
+( login.p9.worldoftanks.net )
