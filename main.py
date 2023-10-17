@@ -4,37 +4,7 @@ from tkinter.ttk import Combobox, Checkbutton
 window = Tk()
 window.title('Как заебала ебаная танковая помойка')
 
-def clicked():
-    choosed_res.configure(text=f'Выбранные серверы - {[k for k, v in check_choosed_srv().items() if v == True]}')
-
-def check_choosed_srv():
-    check_arr = {}
-    for _ in range(9):
-        if chk_state1.get() == True:
-            check_arr['1'] = True
-        if chk_state2.get() == True:
-            check_arr['2'] = True
-        if chk_state3.get() == True:
-            check_arr['4'] = True
-        if chk_state4.get() == True:
-            check_arr['5'] = True
-        if chk_state5.get() == True:
-            check_arr['6'] = True
-        if chk_state6.get() == True:
-            check_arr['7'] = True
-        if chk_state7.get() == True:
-            check_arr['8'] = True
-        if chk_state8.get() == True:
-            check_arr['9'] = True
-        
-    if chk_state9.get() == True:
-        keys_to_set = ['1', '2', '4', '5', '6', '7', '8', '9']
-        for key in keys_to_set:
-            check_arr[key] = True
-
-    return check_arr
-        
-
+keys_to_set = ['1', '2', '4', '5', '6', '7', '8', '9']
 srv_list = [
             """RU1 — Россия, Москва 
             ( login.p1.worldoftanks.net )
@@ -68,7 +38,6 @@ srv_list = [
             ( login.p9.worldoftanks.net )
             """
             ]
-
 srvs = [
             'login.p1.worldoftanks.net',
             'login.p2.worldoftanks.net',
@@ -79,6 +48,40 @@ srvs = [
             'login.p8.worldoftanks.net',
             'login.p9.worldoftanks.net'
             ]
+res_dict = dict(zip(keys_to_set,srvs))
+
+def clicked():
+    choosed_res.configure(text=f'Выбранные серверы - { get_choosed_srv(check_choosed_srv().items()) }')
+
+def check_choosed_srv():
+    check_arr = {}
+    for _ in range(9):
+        if chk_state1.get() == True:
+            check_arr['1'] = True
+        if chk_state2.get() == True:
+            check_arr['2'] = True
+        if chk_state3.get() == True:
+            check_arr['4'] = True
+        if chk_state4.get() == True:
+            check_arr['5'] = True
+        if chk_state5.get() == True:
+            check_arr['6'] = True
+        if chk_state6.get() == True:
+            check_arr['7'] = True
+        if chk_state7.get() == True:
+            check_arr['8'] = True
+        if chk_state8.get() == True:
+            check_arr['9'] = True
+        
+    if chk_state9.get() == True:
+        for key in keys_to_set:
+            check_arr[key] = True
+
+    return check_arr
+
+def get_choosed_srv(s):
+    choosed_domain = [res_dict[key] for key, value in s if value]
+    return choosed_domain
 
 l_sec = Label(window, 
           text='Эта злоебучая писанина проверяет пинг на до серверов Lesta (Мир танков)\n', 
